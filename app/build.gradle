@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+
+
+
+    namespace 'com.subhash1e.mailchimp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.subhash1e.mailchimp"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+//        pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+//    implementation 'com.github.mailchimp:Mailchimp-SDK-Android:1.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+//    implementation("mailchimp:mailchimp:0.2.0")
+//    implementation 'com.touwolf:touwolf-mailchimp-v3:0.0.7'
+    implementation 'com.sun.mail:android-mail:1.6.6'
+    implementation 'com.sun.mail:android-activation:1.6.7'
+//    implementation 'javax.mail:mail:1.6.2'
+
+}

@@ -1,0 +1,24 @@
+//packagingOptions {
+//    pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+//}
+
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io'}
+
+    }
+}
+rootProject.name = "mailchimp"
+include ':app'
